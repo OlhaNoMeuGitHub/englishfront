@@ -30,7 +30,10 @@ export class TodosComponent implements OnInit {
       console.error('error fetching todos', error);
     }
   }
-
+  
+  deleteTodo(id: string) {
+    client.models.Todo.delete({ id })
+  }
   createTodo() {
     try {
       client.models.Todo.create({
